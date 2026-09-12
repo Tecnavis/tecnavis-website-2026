@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tecnavis Web Solutions — We build the systems your business runs on</title>
 <meta name="description" content="Tecnavis Web Solutions Pvt Ltd — websites, e-commerce, Flutter apps, custom software and digital marketing, built and shipped end to end.">
-<link rel="icon" href="./img/tecnavis-logo.png">
+<link rel="icon" href="./img/Mesa de trabajo 1.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,8 +99,8 @@
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
   }
-  .nav-brand{ display:flex; align-items:center; gap:10px; font-family: var(--font-display); font-weight:600; font-size:1.05rem; }
-  .nav-brand img{ width:30px; height:30px; }
+  .nav-brand{ display:flex; align-items:center; gap:10px; }
+  .nav-brand img{ height:34px; width:auto; }
   .nav-links{ display:flex; align-items:center; gap:34px; }
   .nav-links a{
     font-size:0.92rem; color: var(--muted); position:relative; padding: 4px 0;
@@ -119,12 +119,45 @@
     font-size:0.88rem; font-weight:700;
     white-space:nowrap;
   }
-  .nav-toggle{ display:none; }
+  .nav-toggle{
+    display:none; width:38px; height:38px; border-radius:10px;
+    border:1px solid var(--line-strong); background:transparent;
+    align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .nav-toggle svg{ width:18px; height:18px; color: var(--paper); }
   @media (max-width: 760px){
+    .nav{ padding: 14px var(--edge); }
     .nav-links{ display:none; }
     .nav-cta{ padding:9px 16px; font-size:0.82rem; }
     .scroll-cue{ display:none; }
+    .nav-toggle{ display:flex; }
   }
+
+  .mobile-menu{
+    position:fixed; inset:0; z-index:220;
+    background: var(--void-soft);
+    display:flex; flex-direction:column;
+    padding: 22px var(--edge) 40px;
+    transform: translateY(-100%);
+    transition: transform .45s cubic-bezier(.65,0,.35,1);
+    overflow-y:auto;
+  }
+  .mobile-menu.is-open{ transform: translateY(0); }
+  .mobile-menu-top{ display:flex; align-items:center; justify-content:space-between; }
+  .mobile-menu-close{
+    width:38px; height:38px; border-radius:10px; border:1px solid var(--line-strong);
+    background:transparent; display:flex; align-items:center; justify-content:center;
+  }
+  .mobile-menu-close svg{ width:18px; height:18px; color: var(--paper); }
+  .mobile-menu-links{ display:flex; flex-direction:column; gap:6px; margin-top:50px; }
+  .mobile-menu-links a{
+    font-family: var(--font-display); font-size:2rem; padding:14px 0;
+    border-bottom:1px solid var(--line); color: var(--paper); display:flex; align-items:center; gap:16px;
+  }
+  @media (max-width:420px){ .mobile-menu-links a{ font-size:1.5rem; padding:11px 0; } .mobile-menu-links{ margin-top:34px; } }
+  .mobile-menu-links a span{ font-size:0.9rem; color: var(--muted-dim); font-family: var(--font-body); }
+  .mobile-menu-foot{ margin-top:auto; padding-top:30px; }
+  .mobile-menu-foot a{ color: var(--teal); font-family: var(--font-display); }
 
   /* ---------- circuit spine ---------- */
   .spine-col{
@@ -187,25 +220,73 @@
     mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 10%, transparent 75%);
   }
 
-  .hero-inner{ position:relative; z-index:2; }
+  .hero-inner{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1fr; gap:50px; align-items:center;
+  }
+  @media (min-width:980px){
+    .hero-inner{ grid-template-columns: 1.15fr 0.85fr; gap:30px; }
+  }
+
   .hero-eyebrow-row{
     display:flex; align-items:center; gap:12px; margin-bottom:26px; color: var(--muted); font-size:0.92rem;
+    flex-wrap:wrap;
   }
   .hero-eyebrow-row svg{ width:18px; height:18px; flex-shrink:0; }
 
   .hero h1{
-    font-size: clamp(2.4rem, 6.4vw, 5.1rem);
-    line-height: 1.04;
-    max-width: 15ch;
+    font-size: clamp(2.3rem, 5.6vw, 4.4rem);
+    line-height: 1.08;
+    max-width: 19ch;
     overflow:hidden;
   }
   .hero h1 .line{ display:block; overflow:hidden; }
   .hero h1 .line span{ display:inline-block; will-change: transform; }
 
+  .rotator-wrap{ display:inline-block; overflow:hidden; vertical-align:top; }
+  .rotator-word{
+    display:inline-block;
+    background: var(--grad-signal); -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation: wordIn .55s cubic-bezier(.25,1,.5,1);
+  }
+  @keyframes wordIn{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
+
   .hero-sub{
     margin-top: 28px; max-width: 46ch; font-size: clamp(1.02rem, 1.4vw, 1.2rem); color: var(--muted);
   }
   .hero-actions{ display:flex; flex-wrap:wrap; gap:16px; margin-top:40px; }
+
+  /* ---- hero circuit-core visual ---- */
+  .hero-visual{
+    position:relative; width:100%; max-width:440px; aspect-ratio:1/1; margin:0 auto;
+    display:none;
+  }
+  @media (min-width:980px){ .hero-visual{ display:block; } }
+  .hero-visual-inner{ position:relative; width:100%; height:100%; }
+  .hero-visual svg{ position:absolute; inset:0; width:100%; height:100%; }
+  .hv-core{
+    position:absolute; top:50%; left:50%; width:34%; height:34%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    background: var(--grad-signal); border-radius:22%;
+    box-shadow: 0 0 70px rgba(226,63,166,0.45);
+  }
+  .hv-core::after{
+    content:''; position:absolute; inset:14%; border-radius:18%;
+    background: var(--void); opacity:0.12;
+  }
+  .orbit-badge{
+    position:absolute; display:flex; align-items:center; gap:8px;
+    padding:9px 14px; border-radius:100px; border:1px solid var(--line-strong);
+    background: rgba(23,14,45,0.85); backdrop-filter: blur(4px);
+    font-family: var(--font-display); font-size:0.78rem; white-space:nowrap;
+    animation: hvfloat 5s ease-in-out infinite;
+  }
+  .orbit-badge .dot{ width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+  .orbit-badge.ob-1{ top:2%; left:6%; animation-delay: 0s; }
+  .orbit-badge.ob-2{ top:10%; right:0%; animation-delay: 1.2s; }
+  .orbit-badge.ob-3{ bottom:8%; left:0%; animation-delay: 2.1s; }
+  .orbit-badge.ob-4{ bottom:0%; right:8%; animation-delay: 0.6s; }
+  @keyframes hvfloat{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
 
   .btn{
     display:inline-flex; align-items:center; gap:10px;
@@ -314,12 +395,35 @@
   .service-visual.sv-app{ background: radial-gradient(circle at 50% 15%, rgba(43,224,196,0.2), var(--card-2) 70%); }
   .service-visual.sv-custom{ background: radial-gradient(circle at 65% 75%, rgba(255,182,39,0.18), var(--card-2) 70%); }
   .service-visual.sv-marketing{ background: radial-gradient(circle at 35% 75%, rgba(168,85,247,0.2), var(--card-2) 70%); }
+  .service-visual svg .sv-ring{ transform-box: fill-box; transform-origin: center; animation: sv-spin 18s linear infinite; }
+  .service-visual svg .sv-core{ transform-box: fill-box; transform-origin: center; animation: sv-pulse 3.4s ease-in-out infinite; }
+  .service-visual svg .sv-accent{ transform-box: fill-box; transform-origin: center; animation: sv-float 4.2s ease-in-out infinite; }
+  .service-visual svg .sv-accent-b{ animation-delay: 1.6s; }
+  @keyframes sv-spin{ to{ transform: rotate(360deg); } }
+  @keyframes sv-pulse{ 0%,100%{ opacity:1; } 50%{ opacity:0.82; } }
+  @keyframes sv-float{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-7px); } }
 
   /* ================= PROCESS (pinned horizontal) ================= */
   .process{ background: var(--void); overflow:hidden; }
   .process-pin{ position:relative; }
   .process-head{ padding-bottom: 10px; }
+  .process-rail-wrap{ position:relative; }
   .process-rail{ display:flex; gap: 28px; width: max-content; padding: 20px var(--edge) 40px; }
+  @media (max-width: 759px){
+    .process-rail-wrap::before, .process-rail-wrap::after{
+      content:''; position:absolute; top:0; bottom:40px; width:32px; z-index:2; pointer-events:none;
+    }
+    .process-rail-wrap::before{ left:0; background: linear-gradient(to right, var(--void), transparent); }
+    .process-rail-wrap::after{ right:0; background: linear-gradient(to left, var(--void), transparent); }
+    .process-rail{
+      overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x proximity;
+      width:auto; max-width:100%; scroll-padding-left: var(--edge);
+    }
+    .process-card{ scroll-snap-align:start; width: min(82vw, 340px); }
+    .process-progress-track{ display:none; }
+    .process-progress-dots{ justify-content:center; gap:12px; margin-top:16px; }
+    .process-progress-dots .p-dot{ margin-top:0; }
+  }
   .process-card{
     width: min(78vw, 380px); flex-shrink:0;
     border:1px solid var(--line); border-radius:22px; padding: 36px 30px;
@@ -348,9 +452,15 @@
 
   .work-head-row{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:24px; }
 
+  .work-filmstrip-wrap{ position:relative; margin-top:30px; }
+  .work-filmstrip-wrap::before, .work-filmstrip-wrap::after{
+    content:''; position:absolute; top:0; bottom:6px; width:56px; z-index:2; pointer-events:none;
+  }
+  .work-filmstrip-wrap::before{ left:0; background: linear-gradient(to right, var(--void-soft), transparent); }
+  .work-filmstrip-wrap::after{ right:0; background: linear-gradient(to left, var(--void-soft), transparent); }
   .work-filmstrip{
-    display:flex; gap:10px; overflow-x:auto; padding: 30px 0 6px;
-    scrollbar-width: none;
+    display:flex; gap:10px; overflow-x:auto; padding: 0 0 6px;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity;
   }
   .work-filmstrip::-webkit-scrollbar{ display:none; }
   .film-chip{
@@ -358,7 +468,7 @@
     padding:9px 16px 9px 10px; border-radius:100px; border:1px solid var(--line-strong);
     font-family: var(--font-display); font-size:0.8rem; color: var(--muted);
     transition: border-color .3s ease, color .3s ease, background .3s ease;
-    cursor:pointer; background:transparent;
+    cursor:pointer; background:transparent; scroll-snap-align:start;
   }
   .film-chip .chip-mono{
     width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center;
@@ -414,6 +524,7 @@
   .platform-copy .btn{ margin-top:30px; }
 
   .module-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:14px; }
+  @media (max-width:420px){ .module-grid{ grid-template-columns: 1fr; } }
   @media (min-width:560px) and (max-width:899px){ .module-grid{ grid-template-columns: repeat(4,1fr); } }
   @media (min-width:900px){ .module-grid{ grid-template-columns: repeat(2,1fr); } }
   .module-chip{
@@ -457,11 +568,42 @@
   .field input:focus, .field select:focus, .field textarea:focus{
     outline:none; border-color: var(--teal); background: rgba(43,224,196,0.05);
   }
+  .field select option{
+    background: #170e2d; color: #f3effa;
+  }
   .field-row{ display:grid; grid-template-columns:1fr; gap:18px; }
   @media (min-width:560px){ .field-row{ grid-template-columns:1fr 1fr; } }
-  .form-note{ margin-top:16px; font-size:0.84rem; color: var(--muted-dim); }
-  .form-status{ margin-top:14px; font-size:0.9rem; color: var(--teal); display:none; }
-  .form-status.show{ display:block; }
+  /* ---------- animated alert modal ---------- */
+  .alert-overlay{
+    position:fixed; inset:0; z-index:300;
+    background: rgba(10,6,20,0.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    display:flex; align-items:center; justify-content:center; padding:24px;
+    opacity:0; visibility:hidden; transition: opacity .3s ease, visibility 0s linear .3s;
+  }
+  .alert-overlay.show{ opacity:1; visibility:visible; transition: opacity .3s ease; }
+  .alert-box{
+    background: var(--card); border:1px solid var(--line-strong); border-radius:24px;
+    padding: 44px 34px 34px; max-width:360px; width:100%; text-align:center;
+    transform: scale(0.82) translateY(24px); opacity:0;
+    transition: transform .45s cubic-bezier(.34,1.56,.64,1), opacity .3s ease;
+    box-shadow: 0 30px 70px -20px rgba(0,0,0,0.6);
+  }
+  .alert-overlay.show .alert-box{ transform: scale(1) translateY(0); opacity:1; }
+  .alert-icon{ width:76px; height:76px; margin:0 auto 22px; display:none; }
+  .alert-icon.is-active{ display:block; }
+  .alert-icon svg{ width:100%; height:100%; }
+  .alert-circle{ stroke: var(--teal); stroke-width:3; stroke-dasharray:145; stroke-dashoffset:145; }
+  .alert-icon.error .alert-circle{ stroke: var(--magenta); }
+  .alert-check{ stroke: var(--teal); stroke-width:4.5; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:40; stroke-dashoffset:40; }
+  .alert-cross{ stroke: var(--magenta); stroke-width:4.5; stroke-linecap:round; stroke-dasharray:52; stroke-dashoffset:52; }
+  .alert-overlay.show .alert-icon.is-active .alert-circle{ animation: alertCircle .5s ease forwards; }
+  .alert-overlay.show .alert-icon.is-active .alert-check{ animation: alertDraw .4s .42s ease forwards; }
+  .alert-overlay.show .alert-icon.is-active .alert-cross{ animation: alertDraw .4s .42s ease forwards; }
+  @keyframes alertCircle{ to{ stroke-dashoffset:0; } }
+  @keyframes alertDraw{ to{ stroke-dashoffset:0; } }
+  .alert-box h3{ font-size:1.35rem; }
+  .alert-box p{ margin-top:10px; color: var(--muted); font-size:0.95rem; }
+  .alert-box .btn{ margin-top:26px; width:100%; justify-content:center; border:none; }
 
   .contact-card{
     border:1px solid var(--line); border-radius:22px; padding: 36px 32px;
@@ -488,8 +630,8 @@
   /* ================= FOOTER ================= */
   footer{ background: var(--void); border-top:1px solid var(--line); padding: 50px 0 30px; }
   .foot-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px; padding-bottom:34px; border-bottom:1px solid var(--line); }
-  .foot-brand{ display:flex; align-items:center; gap:10px; font-family: var(--font-display); font-weight:600; }
-  .foot-brand img{ width:26px; }
+  .foot-brand{ display:flex; align-items:center; gap:10px; }
+  .foot-brand img{ height:108px; width:auto; }
   .foot-links{ display:flex; flex-wrap:wrap; gap: 40px; }
   .foot-links h4{ font-size:0.82rem; color: var(--muted-dim); margin-bottom:14px; font-weight:600; }
   .foot-links ul li{ margin-bottom:10px; font-size:0.92rem; color: var(--muted); }
@@ -498,6 +640,25 @@
 
   /* ---------- reveal utility (JS-driven) ---------- */
   .reveal{ opacity:0; }
+
+  /* ---------- small-screen safety pass ---------- */
+  @media (max-width:420px){
+    .hero h1{ font-size: clamp(2rem, 9vw, 2.4rem); }
+    .hero-eyebrow-row{ font-size:0.82rem; }
+    .btn{ padding:13px 22px; font-size:0.88rem; }
+    .contact-card{ padding:28px 22px; }
+    .stat-cell{ padding:20px 16px; }
+    .service-visual{ height:160px; }
+    .case-row{ padding: 30px 0; }
+    .case-mono{ width:76px; height:76px; font-size:1.4rem; }
+    .platform-copy .btn{ width:100%; justify-content:center; }
+    .nav .nav-cta{ display:none; }
+    .nav-brand img{ height:28px; width:auto; }
+    .foot-brand img{ height:64px; }
+  }
+  @media (max-width:359px){
+    :root{ --edge: 18px; }
+  }
 
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration: 0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
@@ -517,7 +678,7 @@
 <!-- NAV -->
 <nav class="nav">
   <a href="#top" class="nav-brand">
-    <img src="img/tecnavis-logo.png" alt="Tecnavis">
+    <img src="./img/tecnavis-logo.png" alt="Tecnavis Web Solutions Pvt Ltd">
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
@@ -527,8 +688,33 @@
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Start a project</a>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <a href="#contact" class="nav-cta">Start a project</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="#top" class="nav-brand"><img src="img/tecnavis-logo-full.png" alt="Tecnavis Web Solutions Pvt Ltd" style="height:28px;width:auto;"></a>
+    <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="#services"><span>01</span>Services</a>
+    <a href="#process"><span>02</span>Process</a>
+    <a href="#work"><span>03</span>Work</a>
+    <a href="#platform"><span>04</span>Platform</a>
+    <a href="#about"><span>05</span>About</a>
+    <a href="#contact"><span>06</span>Contact</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="mailto:info@tecnavis.in">info@tecnavis.in</a>
+  </div>
+</div>
 
 <main id="top">
 
@@ -540,21 +726,51 @@
     <div class="hero-blob b3"></div>
 
     <div class="wrap hero-inner">
-      <div class="hero-eyebrow-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        Kerala-based · building for clients across India and abroad
+      <div class="hero-copy">
+        <div class="hero-eyebrow-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Kerala-based · building for clients across India and abroad
+        </div>
+        <h1 id="heroHeadline">
+          <span class="line"><span class="line-inner">We build the</span></span>
+          <span class="line"><span class="rotator-wrap"><span class="rotator-word" id="rotatorWord">websites</span></span></span>
+          <span class="line"><span class="line-inner">that grow with you.</span></span>
+        </h1>
+        <p class="hero-sub">Tecnavis Web Solutions designs, builds and ships digital products — then stays on to run and support them.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">
+            Start a project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#work" class="btn btn-ghost">See our work</a>
+        </div>
       </div>
-      <h1 id="heroHeadline">
-        <span class="line"><span>We build the software</span></span>
-        <span class="line"><span>your business runs on.</span></span>
-      </h1>
-      <p class="hero-sub">Tecnavis Web Solutions designs, builds and ships websites, e-commerce stores, Flutter apps and custom systems — then stays on to run and support them.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">
-          Start a project
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a href="#work" class="btn btn-ghost">See our work</a>
+
+      <div class="hero-visual" id="heroVisual">
+        <div class="hero-visual-inner" id="heroVisualInner">
+          <svg viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(243,239,250,.12)" stroke-width="1.5" stroke-dasharray="2 8"/>
+            <circle cx="200" cy="200" r="110" fill="none" stroke="rgba(243,239,250,.16)" stroke-width="1.5"/>
+            <g stroke="url(#lineGrad)" stroke-width="1.5" fill="none" opacity="0.8">
+              <path id="hvLine1" d="M200 200 L60 60" stroke-dasharray="6 6"/>
+              <path id="hvLine2" d="M200 200 L344 84" stroke-dasharray="6 6"/>
+              <path id="hvLine3" d="M200 200 L50 330" stroke-dasharray="6 6"/>
+              <path id="hvLine4" d="M200 200 L330 344" stroke-dasharray="6 6"/>
+            </g>
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="var(--purple)"/>
+                <stop offset="50%" stop-color="var(--magenta)"/>
+                <stop offset="100%" stop-color="var(--teal)"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="hv-core"></div>
+          <div class="orbit-badge ob-1"><span class="dot" style="background:var(--purple);"></span>Flutter</div>
+          <div class="orbit-badge ob-2"><span class="dot" style="background:var(--magenta);"></span>Laravel</div>
+          <div class="orbit-badge ob-3"><span class="dot" style="background:var(--teal);"></span>React</div>
+          <div class="orbit-badge ob-4"><span class="dot" style="background:var(--amber);"></span>Node.js</div>
+        </div>
       </div>
     </div>
 
@@ -626,16 +842,16 @@
           </div>
           <div class="service-visual sv-web">
             <svg viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
-              <rect x="50" y="50" width="100" height="100" rx="28" fill="var(--purple)"/>
+              <circle class="sv-ring" cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
+              <rect class="sv-core" x="50" y="50" width="100" height="100" rx="28" fill="var(--purple)"/>
               <g transform="translate(66,66)" fill="none" stroke="#f3effa" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="4" y="8" width="60" height="48" rx="7"/>
                 <line x1="4" y1="24" x2="64" y2="24"/>
                 <circle cx="14" cy="16" r="1.8" fill="#f3effa" stroke="none"/>
                 <circle cx="22" cy="16" r="1.8" fill="#f3effa" stroke="none"/>
               </g>
-              <circle cx="164" cy="56" r="10" fill="var(--teal)"/>
-              <circle cx="34" cy="150" r="7" fill="var(--amber)" opacity="0.9"/>
+              <circle class="sv-accent sv-accent-a" cx="164" cy="56" r="10" fill="var(--teal)"/>
+              <circle class="sv-accent sv-accent-b" cx="34" cy="150" r="7" fill="var(--amber)" opacity="0.9"/>
             </svg>
           </div>
         </div>
@@ -649,15 +865,15 @@
           </div>
           <div class="service-visual sv-ecom">
             <svg viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
-              <rect x="50" y="50" width="100" height="100" rx="28" fill="var(--magenta)"/>
+              <circle class="sv-ring" cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
+              <rect class="sv-core" x="50" y="50" width="100" height="100" rx="28" fill="var(--magenta)"/>
               <g transform="translate(70,64)" fill="none" stroke="#f3effa" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M8 16 V12 a12 12 0 0 1 24 0 v4"/>
                 <rect x="0" y="16" width="40" height="34" rx="7"/>
                 <path d="M13 30 l5 5 10 -11"/>
               </g>
-              <circle cx="162" cy="60" r="10" fill="var(--amber)"/>
-              <circle cx="36" cy="148" r="7" fill="var(--purple-soft)" opacity="0.9"/>
+              <circle class="sv-accent sv-accent-a" cx="162" cy="60" r="10" fill="var(--amber)"/>
+              <circle class="sv-accent sv-accent-b" cx="36" cy="148" r="7" fill="var(--purple-soft)" opacity="0.9"/>
             </svg>
           </div>
         </div>
@@ -671,14 +887,14 @@
           </div>
           <div class="service-visual sv-app">
             <svg viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
-              <rect x="50" y="50" width="100" height="100" rx="28" fill="var(--teal)"/>
+              <circle class="sv-ring" cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
+              <rect class="sv-core" x="50" y="50" width="100" height="100" rx="28" fill="var(--teal)"/>
               <g transform="translate(78,62)" fill="none" stroke="#0a0614" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="0" y="0" width="44" height="76" rx="10"/>
                 <line x1="17" y1="66" x2="27" y2="66"/>
               </g>
-              <circle cx="162" cy="58" r="10" fill="var(--magenta)"/>
-              <circle cx="36" cy="150" r="7" fill="var(--purple)" opacity="0.9"/>
+              <circle class="sv-accent sv-accent-a" cx="162" cy="58" r="10" fill="var(--magenta)"/>
+              <circle class="sv-accent sv-accent-b" cx="36" cy="150" r="7" fill="var(--purple)" opacity="0.9"/>
             </svg>
           </div>
         </div>
@@ -692,15 +908,15 @@
           </div>
           <div class="service-visual sv-custom">
             <svg viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
-              <rect x="50" y="50" width="100" height="100" rx="28" fill="var(--amber)"/>
+              <circle class="sv-ring" cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
+              <rect class="sv-core" x="50" y="50" width="100" height="100" rx="28" fill="var(--amber)"/>
               <g transform="translate(66,68)" stroke="#170e2d" stroke-width="4.5" stroke-linecap="round">
                 <line x1="0" y1="12" x2="52" y2="12"/><circle cx="38" cy="12" r="5" fill="#170e2d" stroke="none"/>
                 <line x1="0" y1="32" x2="52" y2="32"/><circle cx="20" cy="32" r="5" fill="#170e2d" stroke="none"/>
                 <line x1="0" y1="52" x2="52" y2="52"/><circle cx="42" cy="52" r="5" fill="#170e2d" stroke="none"/>
               </g>
-              <circle cx="162" cy="58" r="10" fill="var(--purple)"/>
-              <circle cx="36" cy="150" r="7" fill="var(--teal)" opacity="0.9"/>
+              <circle class="sv-accent sv-accent-a" cx="162" cy="58" r="10" fill="var(--purple)"/>
+              <circle class="sv-accent sv-accent-b" cx="36" cy="150" r="7" fill="var(--teal)" opacity="0.9"/>
             </svg>
           </div>
         </div>
@@ -714,14 +930,14 @@
           </div>
           <div class="service-visual sv-marketing">
             <svg viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
-              <rect x="50" y="50" width="100" height="100" rx="28" fill="var(--purple-soft)"/>
+              <circle class="sv-ring" cx="100" cy="100" r="88" fill="none" stroke="rgba(243,239,250,.14)" stroke-width="1.5" stroke-dasharray="3 7"/>
+              <rect class="sv-core" x="50" y="50" width="100" height="100" rx="28" fill="var(--purple-soft)"/>
               <g transform="translate(64,64)" stroke="#f3effa" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
                 <path d="M4 60 L22 42 L34 52 L58 20"/>
                 <path d="M44 20 H58 V34"/>
               </g>
-              <circle cx="162" cy="58" r="10" fill="var(--teal)"/>
-              <circle cx="36" cy="150" r="7" fill="var(--magenta)" opacity="0.9"/>
+              <circle class="sv-accent sv-accent-a" cx="162" cy="58" r="10" fill="var(--teal)"/>
+              <circle class="sv-accent sv-accent-b" cx="36" cy="150" r="7" fill="var(--magenta)" opacity="0.9"/>
             </svg>
           </div>
         </div>
@@ -742,36 +958,38 @@
         </div>
         <div class="process-progress-dots" id="processDots"></div>
       </div>
-      <div class="process-rail" id="processRail">
-        <div class="process-card">
-          <div class="process-num">01</div>
-          <div class="line-track"><div class="line-fill"></div></div>
-          <h3>Discover</h3>
-          <p>We map the business, the users and the real constraints before a line of code gets written.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-num">02</div>
-          <div class="line-track"><div class="line-fill"></div></div>
-          <h3>Design</h3>
-          <p>Wireframes and interfaces built around how the product will actually get used day to day.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-num">03</div>
-          <div class="line-track"><div class="line-fill"></div></div>
-          <h3>Develop</h3>
-          <p>Built on whichever of Laravel, React, Node or Flutter fits the job — backed by proper version control and review.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-num">04</div>
-          <div class="line-track"><div class="line-fill"></div></div>
-          <h3>Deploy</h3>
-          <p>Servers, CI, and store submissions — Play Store and App Store — handled end to end, not left for you to figure out.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-num">05</div>
-          <div class="line-track"><div class="line-fill"></div></div>
-          <h3>Support</h3>
-          <p>We stay on after launch: monitoring, fixes, and scoping whatever the next iteration needs.</p>
+      <div class="process-rail-wrap">
+        <div class="process-rail" id="processRail">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <div class="line-track"><div class="line-fill"></div></div>
+            <h3>Discover</h3>
+            <p>We map the business, the users and the real constraints before a line of code gets written.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <div class="line-track"><div class="line-fill"></div></div>
+            <h3>Design</h3>
+            <p>Wireframes and interfaces built around how the product will actually get used day to day.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <div class="line-track"><div class="line-fill"></div></div>
+            <h3>Develop</h3>
+            <p>Built on whichever of Laravel, React, Node or Flutter fits the job — backed by proper version control and review.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <div class="line-track"><div class="line-fill"></div></div>
+            <h3>Deploy</h3>
+            <p>Servers, CI, and store submissions — Play Store and App Store — handled end to end, not left for you to figure out.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <div class="line-track"><div class="line-fill"></div></div>
+            <h3>Support</h3>
+            <p>We stay on after launch: monitoring, fixes, and scoping whatever the next iteration needs.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -788,7 +1006,9 @@
         </div>
       </div>
 
-      <div class="work-filmstrip" id="workFilmstrip"></div>
+      <div class="work-filmstrip-wrap">
+        <div class="work-filmstrip" id="workFilmstrip"></div>
+      </div>
     </div>
 
     <div class="wrap">
@@ -850,6 +1070,11 @@
 
       <div class="contact-grid">
         <form id="quoteForm" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New project enquiry — Tecnavis website">
+          <input type="hidden" name="from_name" value="Tecnavis website">
+          <input type="checkbox" name="botcheck" style="display:none;">
+
           <div class="field-row">
             <div class="field">
               <label for="fname">Your name</label>
@@ -879,12 +1104,10 @@
             <label for="fmsg">Project details</label>
             <textarea id="fmsg" name="message" rows="4" placeholder="What are you trying to build, and by when?"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="border:none;">
+          <button type="submit" class="btn btn-primary" style="border:none;" id="formSubmitBtn">
             Send message
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
-          <div class="form-status" id="formStatus">Thanks — that's landed in our inbox. We'll reply from info@tecnavis.com shortly.</div>
-          <p class="form-note">This form needs an endpoint or email service connected on the backend before it will actually send.</p>
         </form>
 
         <div class="contact-card">
@@ -898,7 +1121,7 @@
           </div>
           <div class="contact-line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
-            <div><div class="label">Email</div><div class="value">info@tecnavis.com</div></div>
+            <div><div class="label">Email</div><div class="value">info@tecnavis.in</div></div>
           </div>
           <div class="contact-line">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
@@ -915,7 +1138,7 @@
 <footer>
   <div class="wrap">
     <div class="foot-top">
-      <a href="#top" class="foot-brand"><img src="./img/tecnavis-logo.png.png" alt="Tecnavis"></a>
+      <a href="#top" class="foot-brand"><img src="./img/tecnavis-logo.png" alt="Tecnavis Web Solutions Pvt Ltd"></a>
       <div class="foot-links">
         <div>
           <h4>Studio</h4>
@@ -937,7 +1160,7 @@
         <div>
           <h4>Contact</h4>
           <ul>
-            <li><a href="mailto:info@tecnavis.com">info@tecnavis.com</a></li>
+            <li><a href="mailto:info@tecnavis.in">info@tecnavis.in</a></li>
             <li><a href="tel:+916282414031">+91 62824 14031</a></li>
           </ul>
         </div>
@@ -949,6 +1172,20 @@
     </div>
   </div>
 </footer>
+
+<div class="alert-overlay" id="alertOverlay">
+  <div class="alert-box">
+    <div class="alert-icon" id="alertIconSuccess">
+      <svg viewBox="0 0 52 52"><circle class="alert-circle" cx="26" cy="26" r="23" fill="none"/><path class="alert-check" fill="none" d="M14 27l7 7 16-16"/></svg>
+    </div>
+    <div class="alert-icon error" id="alertIconError">
+      <svg viewBox="0 0 52 52"><circle class="alert-circle" cx="26" cy="26" r="23" fill="none"/><path class="alert-cross" fill="none" d="M17 17l18 18M35 17L17 35"/></svg>
+    </div>
+    <h3 id="alertTitle">Message sent</h3>
+    <p id="alertMessage">Thanks — that's landed in our inbox. We'll reply shortly.</p>
+    <button type="button" class="btn btn-primary" id="alertClose">Done</button>
+  </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -1047,13 +1284,15 @@
 
   /* ---------- hero headline stagger-in ---------- */
   if(hasGSAP){
-    gsap.set('.hero h1 .line span', {yPercent: 110});
+    gsap.set('.hero h1 .line-inner, .hero h1 .rotator-wrap', {yPercent: 110});
     gsap.timeline({delay:0.2})
       .to('.hero-eyebrow-row', {opacity:1, y:0, duration:0.6, ease:'power2.out'}, 0)
-      .to('.hero h1 .line span', {yPercent:0, duration:0.9, ease:'power4.out', stagger:0.12}, 0.1)
-      .to('.hero-sub, .hero-actions', {opacity:1, y:0, duration:0.7, ease:'power2.out', stagger:0.1}, 0.55);
+      .to('.hero h1 .line-inner, .hero h1 .rotator-wrap', {yPercent:0, duration:0.9, ease:'power4.out', stagger:0.12}, 0.1)
+      .to('.hero-sub, .hero-actions', {opacity:1, y:0, duration:0.7, ease:'power2.out', stagger:0.1}, 0.55)
+      .to('.hero-visual', {opacity:1, scale:1, duration:0.9, ease:'power3.out'}, 0.4);
 
     gsap.set('.hero-sub, .hero-actions, .hero-eyebrow-row', {opacity:0, y:18});
+    gsap.set('.hero-visual', {opacity:0, scale:0.85});
 
     /* hero blob parallax on scroll */
     gsap.to('.hero-blob.b1', { y: 120, ease:'none', scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true } });
@@ -1061,7 +1300,40 @@
     gsap.to('.hero-blob.b3', { y: 60, ease:'none', scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true } });
     gsap.to('.hero-grid', { y: 40, ease:'none', scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true } });
   } else {
-    document.querySelectorAll('.hero-sub,.hero-actions,.hero-eyebrow-row,.hero h1 .line span').forEach(function(el){ el.style.opacity=1; });
+    document.querySelectorAll('.hero-sub,.hero-actions,.hero-eyebrow-row,.hero h1 .line-inner,.hero h1 .rotator-wrap,.hero-visual').forEach(function(el){ el.style.opacity=1; });
+  }
+
+  /* ---------- hero: rotating word ---------- */
+  var rotatorWords = ['websites','apps','ERPs','storefronts','systems'];
+  var rotatorEl = document.getElementById('rotatorWord');
+  if(rotatorEl && !reduceMotion){
+    var rIdx = 0;
+    setInterval(function(){
+      rIdx = (rIdx+1) % rotatorWords.length;
+      rotatorEl.style.animation = 'none';
+      rotatorEl.textContent = rotatorWords[rIdx];
+      void rotatorEl.offsetWidth;
+      rotatorEl.style.animation = '';
+    }, 2400);
+  }
+
+  /* ---------- hero: circuit-core mouse parallax (desktop only) ---------- */
+  var heroVisualInner = document.getElementById('heroVisualInner');
+  if(hasGSAP && heroVisualInner && !isTouch && !reduceMotion){
+    var hvX = gsap.quickTo(heroVisualInner, 'rotationY', {duration:0.6, ease:'power3.out'});
+    var hvY = gsap.quickTo(heroVisualInner, 'rotationX', {duration:0.6, ease:'power3.out'});
+    gsap.set(heroVisualInner, {transformPerspective:700, transformStyle:'preserve-3d'});
+    document.getElementById('node-hero').addEventListener('mousemove', function(e){
+      var rect = heroVisualInner.getBoundingClientRect();
+      var cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+      var dx = (e.clientX - cx) / (rect.width/2);
+      var dy = (e.clientY - cy) / (rect.height/2);
+      hvX(gsap.utils.clamp(-10,10, dx*10));
+      hvY(gsap.utils.clamp(-10,10, dy*-10));
+    });
+    document.getElementById('node-hero').addEventListener('mouseleave', function(){
+      hvX(0); hvY(0);
+    });
   }
 
   /* ---------- counters ---------- */
@@ -1145,8 +1417,9 @@
     });
   }
 
+  var rail = document.getElementById('processRail');
+
   if(hasGSAP && window.matchMedia('(min-width:760px)').matches){
-    var rail = document.getElementById('processRail');
     var pin = document.getElementById('processPin');
     function railScrollLength(){
       return Math.max(0, rail.scrollWidth - window.innerWidth + 2*72);
@@ -1163,16 +1436,28 @@
       }
     });
     ScrollTrigger.addEventListener('refreshInit', function(){});
-  } else {
-    /* mobile / no-GSAP fallback: reveal each card's line as it scrolls into view */
-    if(hasGSAP){
+  } else if(rail) {
+    /* mobile: native horizontal swipe, dots track whichever card is centred */
+    var mobileTicking = false;
+    function updateMobileProcessProgress(){
+      mobileTicking = false;
+      var railRect = rail.getBoundingClientRect();
+      var centerX = railRect.left + railRect.width / 2;
+      var closest = 0, closestDist = Infinity;
       processCards.forEach(function(card, i){
-        ScrollTrigger.create({
-          trigger: card, start:'top 75%',
-          onEnter: function(){ if(cardLineFills[i]) cardLineFills[i].style.width='100%'; if(pDots[i]) pDots[i].classList.add('is-live'); }
-        });
+        var r = card.getBoundingClientRect();
+        var cardCenter = r.left + r.width / 2;
+        var dist = Math.abs(cardCenter - centerX);
+        if(dist < closestDist){ closestDist = dist; closest = i; }
       });
+      pDots.forEach(function(d, i){ d.classList.toggle('is-live', i <= closest); });
+      cardLineFills.forEach(function(f, i){ if(f) f.style.width = (i <= closest ? '100%' : '0%'); });
     }
+    rail.addEventListener('scroll', function(){
+      if(!mobileTicking){ mobileTicking = true; requestAnimationFrame(updateMobileProcessProgress); }
+    }, {passive:true});
+    window.addEventListener('resize', updateMobileProcessProgress);
+    updateMobileProcessProgress();
   }
 
   /* ---------- work: case-file portfolio (data-driven) ---------- */
@@ -1332,17 +1617,85 @@
     });
   }
 
-  /* ---------- mobile nav toggle (simple show/hide) ---------- */
-  var navLinks = document.getElementById('navLinks');
+  /* ---------- mobile nav toggle ---------- */
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileMenuClose = document.getElementById('mobileMenuClose');
+  function openMobileMenu(){
+    mobileMenu.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu(){
+    mobileMenu.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  if(navToggle){
+    navToggle.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', closeMobileMenu);
+    });
+  }
 
-  /* ---------- contact form (front-end only) ---------- */
+  /* ---------- contact form: Web3Forms submission ---------- */
   var form = document.getElementById('quoteForm');
-  var status = document.getElementById('formStatus');
+  var submitBtn = document.getElementById('formSubmitBtn');
+
+  var alertOverlay = document.getElementById('alertOverlay');
+  var alertIconSuccess = document.getElementById('alertIconSuccess');
+  var alertIconError = document.getElementById('alertIconError');
+  var alertTitle = document.getElementById('alertTitle');
+  var alertMessage = document.getElementById('alertMessage');
+  var alertClose = document.getElementById('alertClose');
+
+  function showAlert(ok){
+    alertIconSuccess.classList.toggle('is-active', ok);
+    alertIconError.classList.toggle('is-active', !ok);
+    if(ok){
+      alertTitle.textContent = 'Message sent';
+      alertMessage.textContent = "Thanks — that's landed in our inbox. We'll reply from info@tecnavis.in shortly.";
+    } else {
+      alertTitle.textContent = "Couldn't send that";
+      alertMessage.textContent = 'Something went wrong — try again, or email info@tecnavis.in directly.';
+    }
+    alertOverlay.classList.add('show');
+  }
+  function hideAlert(){ alertOverlay.classList.remove('show'); }
+  alertClose.addEventListener('click', hideAlert);
+  alertOverlay.addEventListener('click', function(e){ if(e.target === alertOverlay) hideAlert(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hideAlert(); });
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if(!form.checkValidity()){ form.reportValidity(); return; }
-    status.classList.add('show');
-    form.reset();
+
+    submitBtn.disabled = true;
+    var originalLabel = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Sending…';
+
+    var payload = Object.fromEntries(new FormData(form));
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        if(data.success){
+          showAlert(true);
+          form.reset();
+        } else {
+          showAlert(false);
+        }
+      })
+      .catch(function(){
+        showAlert(false);
+      })
+      .finally(function(){
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalLabel;
+      });
   });
 
   window.addEventListener('load', function(){ if(hasGSAP) ScrollTrigger.refresh(); });
