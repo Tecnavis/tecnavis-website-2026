@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Tecnavis Web Solutions</title>
+<meta name="description" content="Websites, e-commerce, Flutter apps, custom software and digital marketing — what's actually included in each, from Tecnavis Web Solutions.">
+<link rel="icon" href="./img/Mesa de trabajo 1.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="./img/tecnavis-logo.png" alt="Tecnavis Web Solutions Pvt Ltd">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="index.html#platform">Platform</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <a href="contact.html" class="nav-cta">Start a project</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="index.html" class="nav-brand"><img src="img/tecnavis-logo-full.png" alt="Tecnavis Web Solutions Pvt Ltd" style="height:28px;width:auto;"></a>
+    <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="services.html"><span>01</span>Services</a>
+    <a href="process.html"><span>02</span>Process</a>
+    <a href="work.html"><span>03</span>Work</a>
+    <a href="index.html#platform"><span>04</span>Platform</a>
+    <a href="about.html"><span>05</span>About</a>
+    <a href="contact.html"><span>06</span>Contact</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="mailto:info@tecnavis.in">info@tecnavis.in</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero">
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    <div class="wrap page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Services</div>
+      <div class="kicker"><span class="dot"></span>What we build</div>
+      <h1>Five ways in. One team behind all of them.</h1>
+      <p>Every project starts with one of these — but the moment it needs something else, that's already in-house too. No hand-offs to a second agency, no "that's not what we do."</p>
+    </div>
+  </section>
+
+  <!-- ================= SERVICE DETAILS ================= -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="service-detail-grid">
+
+        <div class="service-detail-card">
+          <div class="sd-badge" style="background:var(--purple);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f3effa" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><circle cx="7" cy="6.5" r="0.6" fill="#f3effa" stroke="none"/><circle cx="10" cy="6.5" r="0.6" fill="#f3effa" stroke="none"/></svg>
+          </div>
+          <h3>Websites</h3>
+          <p>Marketing sites, dashboards and client portals — built to load fast and hold up as the content grows, not just look good on day one.</p>
+          <ul class="check-list">
+            <li>Custom design, not a reskinned template</li>
+            <li>Built on Laravel, React or Node — whichever fits the content and traffic pattern</li>
+            <li>Content you can actually update yourself after launch</li>
+            <li>SEO fundamentals done properly: structure, speed, metadata</li>
+          </ul>
+        </div>
+
+        <div class="service-detail-card">
+          <div class="sd-badge" style="background:var(--magenta);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f3effa" stroke-width="2"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg>
+          </div>
+          <h3>E-commerce</h3>
+          <p>Storefronts with real checkout, inventory and payment handling — not a shopping-cart plugin bolted onto a template.</p>
+          <ul class="check-list">
+            <li>Razorpay / UPI / COD payment flows wired properly</li>
+            <li>Inventory and order management you actually run day to day</li>
+            <li>Mobile-first checkout — most of your traffic will be on a phone</li>
+            <li>Abandoned-cart handling and basic customer accounts</li>
+          </ul>
+        </div>
+
+        <div class="service-detail-card">
+          <div class="sd-badge" style="background:var(--teal);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0a0614" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+          </div>
+          <h3>App development</h3>
+          <p>Native-feeling Android and iOS apps in Flutter, taken all the way through Play Store and App Store submission — not handed to you half-finished.</p>
+          <ul class="check-list">
+            <li>One Flutter codebase, both platforms</li>
+            <li>Push notifications, offline handling, real device testing</li>
+            <li>Store listing, screenshots and submission handled for you</li>
+            <li>Post-launch crash monitoring and update cycles</li>
+          </ul>
+        </div>
+
+        <div class="service-detail-card">
+          <div class="sd-badge" style="background:var(--amber);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#170e2d" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><circle cx="15" cy="7" r="2" fill="#170e2d" stroke="none"/><line x1="4" y1="14" x2="20" y2="14"/><circle cx="8" cy="14" r="2" fill="#170e2d" stroke="none"/><line x1="4" y1="21" x2="20" y2="21"/><circle cx="17" cy="21" r="2" fill="#170e2d" stroke="none"/></svg>
+          </div>
+          <h3>Custom software</h3>
+          <p>Internal tools, ERPs and automations shaped around how your team actually works — not how a generic package assumes it does.</p>
+          <ul class="check-list">
+            <li>Process mapped before a line of code — we sit with how you actually work</li>
+            <li>Role-based access, audit trails, and real permission structures</li>
+            <li>APIs to connect the tools you already use</li>
+            <li>Built to extend, not rebuilt every time a new need shows up</li>
+          </ul>
+        </div>
+
+        <div class="service-detail-card" style="grid-column: 1 / -1;">
+          <div class="sd-badge" style="background:var(--purple-soft);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f3effa" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+          </div>
+          <h3>Digital marketing</h3>
+          <p>SEO, content and campaigns aimed at bringing traffic to a product that's actually ready to convert it — usually paired with one of the four above, since a marketing push into a slow or confusing site just wastes the ad spend.</p>
+          <ul class="check-list">
+            <li>Technical SEO baked into the build, not patched on after</li>
+            <li>Content that targets what people in your area are actually searching</li>
+            <li>Campaign setup for Google and Meta ads where it makes sense</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section-pad" style="background:var(--void-soft); border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dot"></span>Before you ask</div>
+        <h2>Common questions about the work itself.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item is-open">
+          <div class="faq-q"><span>Do I need to know which service I need before reaching out?</span><span class="plus"></span></div>
+          <div class="faq-a"><p>No — most enquiries start as "I need a website" or "I need an app" and turn into something broader once we understand the business. Tell us what you're trying to solve and we'll tell you honestly what that actually requires.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Can you take over a project someone else started?</span><span class="plus"></span></div>
+          <div class="faq-a"><p>Yes, regularly. We'll review what exists, tell you plainly whether it's worth continuing or rebuilding, and go from there — no obligation to throw away working code just to start fresh.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Do you only build with Laravel, React, Node and Flutter?</span><span class="plus"></span></div>
+          <div class="faq-a"><p>Those are our core, in-house stacks — the ones we can support properly long after launch. If a project genuinely needs something else, we'll say so upfront rather than force-fitting a tool that isn't right.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>What happens after the site or app goes live?</span><span class="plus"></span></div>
+          <div class="faq-a"><p>We stay on. Bugs, small fixes and the next round of features go through the same people who built it — see the <a href="process.html" style="color:var(--teal);">process page</a> for how that works day to day.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Tell us what you're building.</h2>
+      <p>A short brief is enough to start — we'll come back with real questions, not a generic quote.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">
+          Start a project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="work.html" class="btn btn-ghost">See our work</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="index.html" class="foot-brand"><img src="./img/tecnavis-logo.png" alt="Tecnavis Web Solutions Pvt Ltd"></a>
+      <div class="foot-links">
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Websites</a></li>
+            <li><a href="services.html">E-commerce</a></li>
+            <li><a href="services.html">App development</a></li>
+            <li><a href="services.html">Custom software</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@tecnavis.in">info@tecnavis.in</a></li>
+            <li><a href="tel:+916282414031">+91 62824 14031</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Tecnavis Web Solutions Pvt Ltd. All rights reserved.</span>
+      <span>Malappuram, Kerala</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

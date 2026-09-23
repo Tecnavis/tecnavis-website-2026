@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Tecnavis Web Solutions</title>
+<meta name="description" content="Tecnavis Web Solutions Pvt Ltd — a Kerala-based studio building websites, apps and software for clients across India and abroad.">
+<link rel="icon" href="./img/Mesa de trabajo 1.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="./img/tecnavis-logo.png" alt="Tecnavis Web Solutions Pvt Ltd">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="index.html#platform">Platform</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <a href="contact.html" class="nav-cta">Start a project</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="index.html" class="nav-brand"><img src="img/tecnavis-logo-full.png" alt="Tecnavis Web Solutions Pvt Ltd" style="height:28px;width:auto;"></a>
+    <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="services.html"><span>01</span>Services</a>
+    <a href="process.html"><span>02</span>Process</a>
+    <a href="work.html"><span>03</span>Work</a>
+    <a href="index.html#platform"><span>04</span>Platform</a>
+    <a href="about.html"><span>05</span>About</a>
+    <a href="contact.html"><span>06</span>Contact</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="mailto:info@tecnavis.in">info@tecnavis.in</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero">
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    <div class="wrap page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / About</div>
+      <div class="kicker"><span class="dot"></span>Who we are</div>
+      <h1>One team. The whole stack. No hand-off into the void.</h1>
+      <p>Tecnavis started because clients kept needing more than a website — they needed someone to own the whole system, backend to app store, and stay reachable after launch.</p>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="section-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="stat-grid" style="grid-template-columns:repeat(2,1fr); max-width:640px; margin-top:0;">
+        <div class="stat-cell"><div class="stat-num" data-count="100" data-suffix="+">0</div><div class="stat-label">Happy clients</div></div>
+        <div class="stat-cell"><div class="stat-num" data-count="120" data-suffix="+">0</div><div class="stat-label">Projects delivered</div></div>
+        <div class="stat-cell"><div class="stat-num" data-count="24" data-suffix="/7">0</div><div class="stat-label">Support available</div></div>
+        <div class="stat-cell"><div class="stat-num" data-count="4" data-suffix="">0</div><div class="stat-label">Core stacks in-house</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STORY / MISSION / VISION ================= -->
+  <section class="section-pad" style="background:var(--void-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dot"></span>The full story</div>
+        <h2>Why Tecnavis exists, and what it's for.</h2>
+      </div>
+
+      <div class="panel-stack" id="panelStack" style="margin-top:50px; max-width:760px;">
+        <div class="panel is-active" data-panel="0">
+          <div class="panel-tag">Story</div>
+          <h3>Built by developers who stayed hands-on</h3>
+          <p>We're a working studio, not a sales layer in front of freelancers. The people who scope your project are the same ones writing the code, deploying it, and answering when something breaks. That's not a slogan — it's the only way we've found to keep quality consistent once a project gets past the pitch stage.</p>
+        </div>
+        <div class="panel" data-panel="1">
+          <div class="panel-tag">Mission</div>
+          <h3>Startup-grade engineering, without the overhead</h3>
+          <p>Growing businesses deserve the same discipline — clean architecture, proper deployment pipelines, real testing — that funded startups get, at a scope and price that fits where you actually are. We'd rather build something right-sized and solid than something impressive-looking and fragile.</p>
+        </div>
+        <div class="panel" data-panel="2">
+          <div class="panel-tag">Vision</div>
+          <h3>The studio you call for the next project too</h3>
+          <p>We measure success by whether clients come back for the second build, the third feature, the next app — not just the first invoice. A one-time client means we did something wrong somewhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY ================= -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dot"></span>Why teams stay with us</div>
+        <h2>The parts that don't show up in a proposal.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card tilt-card">
+          <div class="why-num">Continuity</div>
+          <h3>Same people, start to finish</h3>
+          <p>The developer who builds your backend also ships the app and handles the deployment — nothing gets lost in a hand-off between teams.</p>
+        </div>
+        <div class="why-card tilt-card">
+          <div class="why-num">Availability</div>
+          <h3>We stay on after launch</h3>
+          <p>Support doesn't end when the invoice is paid. Bugs, small fixes and the next round of features go through the same people who built it.</p>
+        </div>
+        <div class="why-card tilt-card">
+          <div class="why-num">Fit</div>
+          <h3>Scoped to the size you are now</h3>
+          <p>Practical architecture for where your business is today, built so it doesn't have to be thrown away when you grow into the next stage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Want to work with us?</h2>
+      <p>Tell us what you're building — we'll come back with real questions, not a generic quote.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-primary">
+          Start a project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="work.html" class="btn btn-ghost">See our work</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="index.html" class="foot-brand"><img src="./img/tecnavis-logo.png" alt="Tecnavis Web Solutions Pvt Ltd"></a>
+      <div class="foot-links">
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Websites</a></li>
+            <li><a href="services.html">E-commerce</a></li>
+            <li><a href="services.html">App development</a></li>
+            <li><a href="services.html">Custom software</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@tecnavis.in">info@tecnavis.in</a></li>
+            <li><a href="tel:+916282414031">+91 62824 14031</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Tecnavis Web Solutions Pvt Ltd. All rights reserved.</span>
+      <span>Malappuram, Kerala</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

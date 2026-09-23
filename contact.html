@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Tecnavis Web Solutions</title>
+<meta name="description" content="Tell Tecnavis Web Solutions what you're building — websites, e-commerce, apps or custom software. Based in Malappuram, Kerala.">
+<link rel="icon" href="./img/Mesa de trabajo 1.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <img src="./img/tecnavis-logo.png" alt="Tecnavis Web Solutions Pvt Ltd">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="process.html">Process</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="index.html#platform">Platform</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <a href="contact.html" class="nav-cta">Start a project</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="index.html" class="nav-brand"><img src="img/tecnavis-logo-full.png" alt="Tecnavis Web Solutions Pvt Ltd" style="height:28px;width:auto;"></a>
+    <button type="button" class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="services.html"><span>01</span>Services</a>
+    <a href="process.html"><span>02</span>Process</a>
+    <a href="work.html"><span>03</span>Work</a>
+    <a href="index.html#platform"><span>04</span>Platform</a>
+    <a href="about.html"><span>05</span>About</a>
+    <a href="contact.html"><span>06</span>Contact</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="mailto:info@tecnavis.in">info@tecnavis.in</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero">
+    <div class="hero-blob b1"></div>
+    <div class="hero-blob b2"></div>
+    <div class="wrap page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+      <div class="kicker"><span class="dot"></span>Get in touch</div>
+      <h1>Tell us what you're building.</h1>
+      <p>A short brief is enough to start — we'll come back with real questions, not a generic quote.</p>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact section-pad">
+    <div class="wrap">
+      <div class="contact-grid" style="margin-top:0;">
+        <form id="quoteForm" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New project enquiry — Tecnavis website">
+          <input type="hidden" name="from_name" value="Tecnavis website">
+          <input type="checkbox" name="botcheck" style="display:none;">
+
+          <div class="field-row">
+            <div class="field">
+              <label for="fname">Your name</label>
+              <input id="fname" name="name" type="text" required placeholder="Full name">
+            </div>
+            <div class="field">
+              <label for="fphone">Mobile</label>
+              <input id="fphone" name="phone" type="tel" required placeholder="+91 00000 00000">
+            </div>
+          </div>
+          <div class="field">
+            <label for="femail">Email</label>
+            <input id="femail" name="email" type="email" required placeholder="you@company.com">
+          </div>
+          <div class="field">
+            <label for="fproject">What do you need?</label>
+            <select id="fproject" name="project">
+              <option>Website</option>
+              <option>E-commerce store</option>
+              <option>Mobile app</option>
+              <option>Custom software / ERP</option>
+              <option>Digital marketing</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fmsg">Project details</label>
+            <textarea id="fmsg" name="message" rows="4" placeholder="What are you trying to build, and by when?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="border:none;" id="formSubmitBtn">
+            Send message
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+
+        <div class="contact-card">
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div><div class="label">Studio</div><div class="value">Malappuram, Kerala 676505, India</div></div>
+          </div>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.23a2 2 0 0 1 2.11-.45c.86.32 1.75.54 2.65.66A2 2 0 0 1 22 16.92z"/></svg>
+            <div><div class="label">Phone</div><div class="value">+91 62824 14031</div></div>
+          </div>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <div><div class="label">Email</div><div class="value">info@tecnavis.in</div></div>
+          </div>
+          <div class="contact-line">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><div class="label">Hours</div><div class="value">Mon – Sat, 9:30 AM – 6:00 PM</div></div>
+          </div>
+          <div class="contact-node"><span class="pulse"></span>Signal complete — we usually reply within one working day.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section-pad" style="background:var(--void-soft); border-top:1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker"><span class="dot"></span>Before you write in</div>
+        <h2>Quick answers.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item is-open">
+          <div class="faq-q"><span>What should I include in the message?</span><span class="plus"></span></div>
+          <div class="faq-a"><p>What the business does, roughly what you need (a site, an app, something custom), and any deadline you're working against. That's enough for us to come back with real questions instead of a generic quote.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>How fast will I hear back?</span><span class="plus"></span></div>
+          <div class="faq-a"><p>Within one working day, usually much sooner. We're on Mon–Sat, 9:30 AM–6:00 PM IST.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Is a call required, or can everything happen over message?</span><span class="plus"></span></div>
+          <div class="faq-a"><p>Whatever's easier for you. Plenty of projects run entirely over WhatsApp and email — a call happens only if it genuinely saves time.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a href="index.html" class="foot-brand"><img src="./img/tecnavis-logo.png" alt="Tecnavis Web Solutions Pvt Ltd"></a>
+      <div class="foot-links">
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Websites</a></li>
+            <li><a href="services.html">E-commerce</a></li>
+            <li><a href="services.html">App development</a></li>
+            <li><a href="services.html">Custom software</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@tecnavis.in">info@tecnavis.in</a></li>
+            <li><a href="tel:+916282414031">+91 62824 14031</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Tecnavis Web Solutions Pvt Ltd. All rights reserved.</span>
+      <span>Malappuram, Kerala</span>
+    </div>
+  </div>
+</footer>
+
+<div class="alert-overlay" id="alertOverlay">
+  <div class="alert-box">
+    <div class="alert-icon" id="alertIconSuccess">
+      <svg viewBox="0 0 52 52"><circle class="alert-circle" cx="26" cy="26" r="23" fill="none"/><path class="alert-check" fill="none" d="M14 27l7 7 16-16"/></svg>
+    </div>
+    <div class="alert-icon error" id="alertIconError">
+      <svg viewBox="0 0 52 52"><circle class="alert-circle" cx="26" cy="26" r="23" fill="none"/><path class="alert-cross" fill="none" d="M17 17l18 18M35 17L17 35"/></svg>
+    </div>
+    <h3 id="alertTitle">Message sent</h3>
+    <p id="alertMessage">Thanks — that's landed in our inbox. We'll reply shortly.</p>
+    <button type="button" class="btn btn-primary" id="alertClose">Done</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
