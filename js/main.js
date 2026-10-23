@@ -118,7 +118,7 @@
     }
 
     /* rotating word */
-    var rotatorWords = ['Websites','E-commerce','Mobile apps','Custom Softwares','Storefronts','AI systems','Automation','Digital Marketing'];
+    var rotatorWords = ['websites','apps','ERPs','storefronts','systems'];
     var rotatorEl = document.getElementById('rotatorWord');
     if(rotatorEl && !reduceMotion){
       var rIdx = 0;
@@ -153,6 +153,8 @@
   var statGrid = document.querySelector('.stat-grid');
   if(statGrid){
     var counted = false;
+    /* final values are in the HTML for crawlers; reset to 0 only when the count-up will run */
+    if(hasGSAP){ document.querySelectorAll('.stat-num').forEach(function(el){ el.textContent = '0' + (el.dataset.suffix || ''); }); }
     function runCounters(){
       if(counted) return; counted = true;
       document.querySelectorAll('.stat-num').forEach(function(el){
@@ -319,7 +321,9 @@
         status:'In development' }
     ];
 
-    caseData.forEach(function(item, i){
+    /* case rows + chips are rendered in static HTML (crawlable); JS builds them only if absent */
+    var staticCases = caseList.children.length > 0;
+    if(!staticCases) caseData.forEach(function(item, i){
       var idx = String(i+1).padStart(2,'0');
 
       var row = document.createElement('div');
@@ -348,6 +352,15 @@
       });
       filmstrip.appendChild(chip);
     });
+
+    if(staticCases){
+      filmstrip.querySelectorAll('.film-chip').forEach(function(chip){
+        chip.addEventListener('click', function(){
+          var t = document.getElementById(chip.dataset.target);
+          if(t) t.scrollIntoView({behavior: reduceMotion ? 'auto' : 'smooth', block:'center'});
+        });
+      });
+    }
 
     var chips = filmstrip.querySelectorAll('.film-chip');
     function setActiveCase(i){
@@ -389,7 +402,7 @@
       { code:'RE', name:'Reports', color:'var(--magenta)' },
       { code:'SE', name:'Settings', color:'var(--teal)' }
     ];
-    moduleData.forEach(function(m){
+    if(!moduleGrid.children.length) moduleData.forEach(function(m){
       var chip = document.createElement('div');
       chip.className = 'module-chip';
       chip.innerHTML =

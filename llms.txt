@@ -1,0 +1,29 @@
+# Tecnavis Web Solutions
+
+> Tecnavis Web Solutions Pvt Ltd is a web development, e-commerce, mobile app and custom software company based in Malappuram, Kerala, India. It serves clients in Malappuram, across Kerala, India and abroad.
+
+## Contact
+- Website: https://www.tecnavis.in/
+- Address: Malappuram, Kerala 676505, India
+- Phone: +91 62824 14031
+- Email: info@tecnavis.in
+- Hours: Monday to Saturday, 9:30 AM to 6:00 PM IST
+- Google Maps: https://www.google.com/maps/search/?api=1&query=Tecnavis+Web+Solutions+Malappuram
+
+## Services
+- Websites: custom-designed marketing sites, dashboards and client portals (Laravel, React, Node)
+- E-commerce: online stores with catalogue, checkout and admin panel
+- App development: mobile apps built with Flutter, with backend and admin
+- Custom software: business systems and ERP
+- Digital marketing
+
+## Pages
+- [Home](https://www.tecnavis.in/): overview, FAQ and how to find Tecnavis on Google
+- [Services](https://www.tecnavis.in/services.html): what is included in each service
+- [Work](https://www.tecnavis.in/work.html): ten projects including RSA Kerala, Tarak Connect, Adamlex, DuoJobs, Mind Touch Counsellors, Cognix Learn, Looi and Malabar Decors
+- [Process](https://www.tecnavis.in/process.html): Discover, Design, Develop, Deploy, Support
+- [About](https://www.tecnavis.in/about.html): who Tecnavis is and why clients stay
+- [Contact](https://www.tecnavis.in/contact.html): project enquiry form
+
+## Related
+- Tecnavis Platform (own product: HRM, sales, finance, inventory, projects, reports): https://www.tecnavisplatform.com

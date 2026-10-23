@@ -737,3 +737,11 @@
   @media (prefers-reduced-motion: reduce){
     *{ animation-duration: 0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
   }
+
+/* ================= FIND US (local SEO block) ================= */
+.find-us{ margin-top:40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px;
+  padding:28px; border-radius:20px; border:1px solid var(--line); background:var(--card); }
+.find-us h3{ font-size:1.25rem; margin-bottom:8px; }
+.find-us address{ font-style:normal; color:var(--muted); line-height:1.7; font-size:0.95rem; }
+.find-us-actions{ display:flex; flex-wrap:wrap; gap:12px; }
+@media (max-width:560px){ .find-us{ padding:22px; } .find-us-actions, .find-us-actions .btn{ width:100%; justify-content:center; } }

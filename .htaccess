@@ -1,0 +1,10 @@
+# Apache only (cPanel / shared hosting). Delete this file if your host is Nginx, Netlify, Vercel, etc.
+RewriteEngine On
+
+# force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.tecnavis.in/$1 [R=301,L]
+
+# force www
+RewriteCond %{HTTP_HOST} ^tecnavis\.in$ [NC]
+RewriteRule ^(.*)$ https://www.tecnavis.in/$1 [R=301,L]
