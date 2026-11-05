@@ -29,7 +29,7 @@
 - Tecnavis Platform (own product: HRM, sales, finance, inventory, projects, reports): https://www.tecnavisplatform.com
 
 ## Legal
-- [Privacy Policy](https://www.tecnavis.in/privacy-policy.html)
+- [Privacy Policy](https://www.tecnavis.in/privacy.html)
 - [Terms & Conditions](https://www.tecnavis.in/terms-and-conditions.html)
 - [Refund & Cancellation Policy](https://www.tecnavis.in/refund-policy.html)
 - [Account & Data Deletion](https://www.tecnavis.in/data-deletion.html)

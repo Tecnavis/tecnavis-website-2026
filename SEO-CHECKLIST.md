@@ -40,7 +40,7 @@ Already in the site: question-style FAQs with matching FAQPage schema, plain-tex
 Not included on purpose: star ratings and map coordinates in the schema (add them only once you have real reviews and a verified address — fake ratings can get a site penalised).
 
 ## 6. Play Store / App Store submission links
-- Privacy Policy URL: `https://www.tecnavis.in/privacy-policy.html` (Play Console + App Store Connect)
+- Privacy Policy URL: `https://www.tecnavis.in/privacy.html` (Play Console + App Store Connect)
 - Account deletion URL (Play Console → App content → Data safety): `https://www.tecnavis.in/data-deletion.html`
 - Terms: `https://www.tecnavis.in/terms-and-conditions.html` · Refunds: `https://www.tecnavis.in/refund-policy.html`
 - Support URL (App Store Connect): `https://www.tecnavis.in/contact.html`
