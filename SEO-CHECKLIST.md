@@ -38,3 +38,10 @@ Already in the site: question-style FAQs with matching FAQPage schema, plain-tex
 - [ ] Update `lastmod` dates in `sitemap.xml` when pages change.
 
 Not included on purpose: star ratings and map coordinates in the schema (add them only once you have real reviews and a verified address — fake ratings can get a site penalised).
+
+## 6. Play Store / App Store submission links
+- Privacy Policy URL: `https://www.tecnavis.in/privacy-policy.html` (Play Console + App Store Connect)
+- Account deletion URL (Play Console → App content → Data safety): `https://www.tecnavis.in/data-deletion.html`
+- Terms: `https://www.tecnavis.in/terms-and-conditions.html` · Refunds: `https://www.tecnavis.in/refund-policy.html`
+- Support URL (App Store Connect): `https://www.tecnavis.in/contact.html`
+- The Play "Data safety" form and Apple "App Privacy" answers must match what each app really collects and which SDKs it uses (Firebase, maps, payments, analytics…). Mismatches are a common rejection reason.
